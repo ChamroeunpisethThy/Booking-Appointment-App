@@ -1,10 +1,9 @@
 ﻿// Application entry point and top-level screen navigation.
 import 'package:flutter/material.dart';
-import 'package:booking_appointment_app/widgets/loading_screen.dart';
-import 'package:booking_appointment_app/widgets/signin_screen.dart';
-import 'package:booking_appointment_app/widgets/bottom_navigation.dart';
-import 'package:booking_appointment_app/screens/home_screen.dart';
-import 'package:booking_appointment_app/screens/appointment_screen.dart';
+import 'package:booking_appointment_app/pages/widgets/loading_screen.dart';
+import 'package:booking_appointment_app/pages/widgets/signin_screen.dart';
+import 'package:booking_appointment_app/pages/widgets/bottom_navigation.dart';
+import 'package:booking_appointment_app/screens/home/home_screen.dart';
 
 void main() {
   // Start the Flutter application with the root stateful widget.
@@ -44,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       title: 'BookMyTime',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF343A8F)),
         useMaterial3: true,
         scaffoldBackgroundColor: const Color(0xFFEEF2FF),
       ),
@@ -102,7 +101,8 @@ class _MainAppState extends State<MainApp> {
       case 0:
         return const HomeScreen();
       case 1:
-        return const AppointmentScreen();
+        // return const DoctorScreen();
+        return const Center(child: Text('Appointments'));
       case 2:
         return const Center(child: Text('Messages'));
       case 3:

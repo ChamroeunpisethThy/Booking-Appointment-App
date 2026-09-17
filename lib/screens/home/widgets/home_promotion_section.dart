@@ -83,7 +83,7 @@ class _PromotionHomeScreenState extends State<PromotionHomeScreen> {
                         width: double.infinity,
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) =>
-                          // Show a stable fallback when remote media fails.
+                            // Show a stable fallback when remote media fails.
                             const ColoredBox(
                           color: Color(0xFFD84545),
                           child: Center(
@@ -115,13 +115,15 @@ class _PromotionHomeScreenState extends State<PromotionHomeScreen> {
                             widget.imageUrls.length,
                             (index) => AnimatedContainer(
                               duration: const Duration(milliseconds: 200),
-                              width: index == _currentPage ? 22 : 8,
+                              width: index == _currentPage ? 8 : 8,
                               height: 8,
                               margin: const EdgeInsets.symmetric(horizontal: 3),
                               decoration: BoxDecoration(
                                 color: index == _currentPage
-                                    ? Colors.white
-                                    : Colors.white54,
+                                    // ? Colors.white
+                                    // : Colors.white54,
+                                    ? Colors.blue
+                                    : Colors.white,
                                 borderRadius: BorderRadius.circular(8),
                               ),
                             ),

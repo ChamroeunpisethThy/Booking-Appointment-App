@@ -1,10 +1,10 @@
 // Main scrollable home page composed of reusable content sections.
 import 'package:flutter/material.dart';
-// import 'package:booking_appointment_app/data/home_data.dart';
-import 'package:booking_appointment_app/widgets/home/home_blogs_section.dart';
-import 'package:booking_appointment_app/widgets/home/home_header.dart';
-import 'package:booking_appointment_app/widgets/home/home_promotion_section.dart';
-import 'package:booking_appointment_app/widgets/home/home_services_section.dart';
+import 'package:booking_appointment_app/screens/home/widgets/home_blogs_section.dart';
+import 'package:booking_appointment_app/screens/home/widgets/home_header.dart';
+import 'package:booking_appointment_app/screens/home/widgets/home_promotion_section.dart';
+import 'package:booking_appointment_app/screens/home/widgets/home_services_section.dart';
+import 'package:booking_appointment_app/screens/home/widgets/home_search_bar.dart';
 
 // Displays the clinic header, search field, services, promotions, and posts.
 class HomeScreen extends StatefulWidget {
@@ -15,15 +15,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final _searchController = TextEditingController();
-
-  @override
-  void dispose() {
-    // Release the search field controller when the screen is removed.
-    _searchController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     // Compose the home page as one vertically scrollable content feed.
@@ -39,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
               _buildHeader(),
               const SizedBox(height: 20),
               // Search field for filtering or finding home content.
-              _buildSearchBar(),
+              const HomeSearchBar(),
               const SizedBox(height: 28),
               // Quick-access service shortcuts.
               const ServicesHomeScreen(),
@@ -76,36 +67,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         );
       },
-    );
-  }
-
-  Widget _buildSearchBar() {
-    // Build the shared search input used above the home sections.
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: TextField(
-        controller: _searchController,
-        decoration: InputDecoration(
-          hintText: 'Search',
-          hintStyle: TextStyle(color: Colors.grey.shade400),
-          prefixIcon: Icon(Icons.search, color: Colors.grey.shade400),
-          suffixText: 'Cancel',
-          suffixStyle: const TextStyle(
-            color: Color(0xFF0D9488),
-            fontWeight: FontWeight.w600,
-          ),
-          filled: true,
-          fillColor: Colors.white,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(14),
-            borderSide: BorderSide.none,
-          ),
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 14,
-          ),
-        ),
-      ),
     );
   }
 

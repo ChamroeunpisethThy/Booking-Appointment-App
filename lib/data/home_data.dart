@@ -48,8 +48,8 @@ class HomeData {
 
   // Quick-access actions displayed in the services grid.
   static const services = [
-    HomeService(title: 'Appointment', icon: Icons.calendar_today),
-    HomeService(title: 'Our Service', icon: Icons.medical_services),
+    HomeService(title: 'Doctors', icon: Icons.calendar_today),
+    HomeService(title: 'Services', icon: Icons.medical_services),
     HomeService(title: 'About Us', icon: Icons.info_outline),
     HomeService(title: 'Contact Us', icon: Icons.phone_in_talk),
   ];
